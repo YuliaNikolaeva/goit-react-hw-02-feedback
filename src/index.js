@@ -21,9 +21,9 @@ ReactDOM.render(
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Statistics props={ statisticalData }/>
-      <FriendList props={ friends }/>
-      <TransactionHistory props={ transaction }/>
+      <Statistics statisticsList={ statisticalData }/>
+      <FriendList friends={ friends }/>
+      <TransactionHistory transactionList={ transaction }/>
     </Fragment>
   </React.StrictMode>,
   document.getElementById('root')

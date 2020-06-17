@@ -2,19 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types'; 
 
 import styles from './FriendList.module.css';
+import FriendItem from './FriendItem';
 import defaultUserImage from './default-user.png'
 
-const FriendList = ({props}) => {
+const FriendList = ({friends}) => {
 	return (
 		<section>
 			<ul className={styles.list}>
-				{props.map(prop => {
+				{friends.map(friend => {
 					return (
-						<li className={styles.item} key={prop.id}>
-							<span className={prop.isOnline ? styles.online : styles.offline}></span>
-							<img className={styles.avatar} src={prop.avatar} alt="friend avatar" width="48" />
-							<p className={styles.name}>{prop.name}</p>
-						</li>
+						<li className={styles.item} key={friends.id}><FriendItem friendItem={friend} /></li>
 					)
 				})}
 			</ul>
@@ -22,15 +19,20 @@ const FriendList = ({props}) => {
 	);
 };
 
-export default FriendList;
 
 FriendList.defaultProps = {
 	avatar: defaultUserImage,
 };
 
 FriendList.propTypes = {
-	avatar: PropTypes.string,
-	name: PropTypes.string,
-	isOnline: PropTypes.bool,
-	id: PropTypes.number,
+	friends: PropTypes.arrayOf(
+		PropTypes.shape({
+			avatar: PropTypes.string,
+			name: PropTypes.string.isRequired,
+			isOnline: PropTypes.bool.isRequired,
+			id: PropTypes.number.isRequired,
+		})
+	),
 };
+
+export default FriendList;
