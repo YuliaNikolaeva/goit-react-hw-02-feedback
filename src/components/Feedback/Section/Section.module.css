@@ -1,0 +1,8 @@
+.head {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.section:not(:last-child) {
+    margin-bottom: 50px;
+}

@@ -1,0 +1,50 @@
+/* Статистика индивидуальная */
+
+.statistics__list {
+    list-style: none;
+    font-size: 25px;
+    line-height: 40px;
+    margin-right: 15px;
+}
+
+.statistics__name {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.statistics__value {
+    display: inline-block;
+}
+
+/* Статистика общая в процентах */
+
+.head {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.statisticsTotal {
+    list-style: none;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.statisticsTotal__name {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.statisticsTotal__value {
+    display: inline-block;
+}
+
+/* Статистика общая в положительных */
+
+.positive__name {
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.positive__value {
+    display: inline-block;
+}

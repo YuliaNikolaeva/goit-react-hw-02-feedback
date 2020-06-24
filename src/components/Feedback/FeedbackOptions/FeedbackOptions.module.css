@@ -1,0 +1,17 @@
+.feedback__buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.btn {
+    border: 1 px solid rgb(0%, 0%, 0%, 1);
+    width: 130px;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:not(:last-child) {
+    margin-right: 10px;
+}
