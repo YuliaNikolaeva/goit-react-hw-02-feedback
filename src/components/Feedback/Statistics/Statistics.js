@@ -1,4 +1,7 @@
 import React from 'react';
+
+import PropTypes from 'prop-types';
+
 import s from './Statistics.module.css';
 
 const Statistics = ({ options, total, positivePercentage }) => {
@@ -36,6 +39,16 @@ const Statistics = ({ options, total, positivePercentage }) => {
             </ul>
         </>
     );
+};
+
+Statistics.propTypes = {
+    total: PropTypes.func,
+    positivePercentage: PropTypes.func,
+    options: PropTypes.exact({
+        good: PropTypes.number,
+        netural: PropTypes.number,
+        bad: PropTypes.number,
+    }),
 };
 
 export default Statistics;
