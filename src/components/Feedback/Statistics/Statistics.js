@@ -1,17 +1,18 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import s from './Statistics.module.css';
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+const Statistics = ({ options, total, positivePercentage }) => {
+    const { good, netural, bad } = options;
     return (
-        <Fragment>
+        <>
             <ul className={s.statistics__list}>
                 <li className={s.statistics__list}>
-                    <div className={s.statistics__name}>Goog:</div>
+                    <div className={s.statistics__name}>Neutral:</div>
                     <div className={s.statistics__value}>{good}</div>
                 </li>
                 <li className={s.statistics__list}>
                     <div className={s.statistics__name}>Neutral:</div>
-                    <div className={s.statistics__value}>{neutral}</div>
+                    <div className={s.statistics__value}>{netural}</div>
                 </li>
 
                 <li className={s.statistics__list}>
@@ -33,7 +34,7 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
                     </div>
                 </li>
             </ul>
-        </Fragment>
+        </>
     );
 };
 

@@ -10,20 +10,22 @@ import Notification from './components/Feedback/Notification';
 export default class App extends Component {
     state = {
         good: 0,
-        neutral: 0,
+        netural: 0,
         bad: 0,
     };
 
     plusVote = e => {
-        const btnId = e.currentTarget.id;
+        const btnName = e.currentTarget.name;
+        // console.log('qqq' , btnName)
         this.setState(prevState => ({
-            [btnId]: prevState[btnId] + 1,
+            [btnName]: prevState[btnName] + 1,
         }));
     };
 
     countTotalFeedback = () => {
         let total = 0;
         for (const voice in this.state) {
+            // console.log()
             total = total + this.state[voice];
         }
         return total;
@@ -50,7 +52,7 @@ export default class App extends Component {
                         <Statistics
                             good={this.state.good}
                             neutral={this.state.neutral}
-                            options={this.state.bad}
+                            options={this.state}
                             total={this.countTotalFeedback}
                             positivePercentage={
                                 this.countPositiveFeedbackPercentage
