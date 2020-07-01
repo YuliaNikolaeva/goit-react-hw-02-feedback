@@ -16,7 +16,6 @@ export default class App extends Component {
 
     plusVote = e => {
         const btnName = e.currentTarget.name;
-        // console.log('qqq' , btnName)
         this.setState(prevState => ({
             [btnName]: prevState[btnName] + 1,
         }));
@@ -25,7 +24,6 @@ export default class App extends Component {
     countTotalFeedback = () => {
         let total = 0;
         for (const voice in this.state) {
-            // console.log()
             total = total + this.state[voice];
         }
         return total;
