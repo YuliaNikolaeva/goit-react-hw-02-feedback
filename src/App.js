@@ -22,11 +22,8 @@ export default class App extends Component {
     };
 
     countTotalFeedback = () => {
-        let total = 0;
-        for (const voice in this.state) {
-            total = total + this.state[voice];
-        }
-        return total;
+        const vote = Object.values(this.state);
+        return vote.reduce((acc, item) => acc + item, 0);
     };
 
     countPositiveFeedbackPercentage = () => {
