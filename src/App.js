@@ -34,10 +34,7 @@ export default class App extends Component {
         return (
             <div className={s.page__wrapper}>
                 <Section title="Please leave feedback">
-                    <FeedbackOptions
-                        options={this.state}
-                        onLeaveFeedback={this.plusVote}
-                    />
+                    <FeedbackOptions onLeaveFeedback={this.plusVote} />
                 </Section>
 
                 {this.countTotalFeedback() === 0 ? (
